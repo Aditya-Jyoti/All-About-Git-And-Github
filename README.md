@@ -119,7 +119,7 @@ Basically it is one big folder filled with code files necessary to make a projec
 
 ### Begin working on the repository
 
-1. Clone the repository `$git clone https://<username>//<username>.git`
+1. Clone the repository `$git clone https://<username>//<repository-name>.git`
 2. Open the repository and the README.md in your favorite text editor
 3. Make changes, example add a description of yourself
 4. Add the file to staging `$git add README.md`
