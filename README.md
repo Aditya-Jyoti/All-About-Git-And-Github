@@ -2,15 +2,15 @@
 
 ## Index
 
-  - [Necessary git commands](#necessary-git-commands)
-  - [Getting started with github](#getting-started-with-github)
-    - [Create a github account](#create-a-github-account)
-    - [How to install git](#how-to-install-git)
-    - [How to setup remote access on github](#how-to-setup-remote-access-on-github)
+  - [Necessary Git commands](#necessary-git-commands)
+  - [Getting started with GitHub](#getting-started-with-github)
+    - [Create a GitHub account](#create-a-github-account)
+    - [How to install Git](#how-to-install-git)
+    - [How to setup remote access on GitHub](#how-to-setup-remote-access-on-github)
   - [Making your first commit](#making-your-first-commit)
-    - [How to make a github repository](#how-to-make-a-github-repository)
+    - [How to make a GitHub repository](#how-to-make-a-github-repository)
     - [Begin working on the repository](#begin-working-on-the-repository)
-  - [Making your first open source contribution](#making-your-first-open-source-contribution)
+  - [Making your first open-source contribution](#making-your-first-open-source-contribution)
   - [Merge and Rebase](#merge-and-rebase)
     - [Git Merge](#git-merge)
     - [Git Rebase](#git-rebase)
@@ -29,65 +29,65 @@
 
 | Command                  | Description                                                                                                                              | Example                                                          |
 | :----------------------- | :--------------------------------------------------------------------------------------------------------------------------------------- | :--------------------------------------------------------------- |
-| init                     | initializes a new git repository in current directory                                                                                    | `$git init`                                                      |
-| clone \[repo url\]       | create a local copy (clone) of an existing repository                                                                                    | `$git clone https://github.com/<username>/<repository-name>.git` |
-| add \[file(s) \| <.>\]   | adds file changes to the staging area so that they can be committed                                                                      | `$git add file1 file2 folder`                                    |
-| commit -m \<message\>    | records changes to the repository, creating a new commit with a descriptive message                                                      | `$git commit -m "Placeholder message"`                           |
-| status                   | displays the current state of the repository, including changes that have been staged or not staged for commit, untracked files and more | `$git status`                                                    |
-| log                      | displays a chronological list of commits in the repository, showing commit hashes, authors, dates, and commit messages                   | `$git log`                                                       |
-| branch                   | creates a new branch with the specified name. branches allow for parallel development and isolation of features or fixes                 | `$git branch <branch-name>`                                      |
-| checkout \<branch-name\> | switches to a different branch or a specific commit, updating the working directory to match the state of the chosen branch or commit    | `$git checkout <branch-name>`                                    |
-| pull                     | fetches changes from the remote repository and merges them into the current branch                                                       | `$git pull`                                                      |
-| push                     | uploads local changes to the remote repository, making them accessible to others                                                         | `$git push`                                                      |
+| init                     | initializes a new git repository in current directory                                                                                    | `git init`                                                      |
+| clone \[repo url\]       | create a local copy (clone) of an existing repository                                                                                    | `git clone https://github.com/<username>/<repository-name>.git` |
+| add \[file(s) \| <.>\]   | adds file changes to the staging area so that they can be committed                                                                      | `git add file1 file2 folder`                                    |
+| commit -m \<message\>    | records changes to the repository, creating a new commit with a descriptive message                                                      | `git commit -m "Placeholder message"`                           |
+| status                   | displays the current state of the repository, including changes that have been staged or not staged for commit, untracked files and more | `git status`                                                    |
+| log                      | displays a chronological list of commits in the repository, showing commit hashes, authors, dates, and commit messages                   | `git log`                                                       |
+| branch                   | creates a new branch with the specified name. branches allow for parallel development and isolation of features or fixes                 | `git branch <branch-name>`                                      |
+| checkout \<branch-name\> | switches to a different branch or a specific commit, updating the working directory to match the state of the chosen branch or commit    | `git checkout <branch-name>`                                    |
+| pull                     | fetches changes from the remote repository and merges them into the current branch                                                       | `git pull`                                                      |
+| push                     | uploads local changes to the remote repository, making them accessible to others                                                         | `git push`                                                      |
 
-## Getting started with github
+## Getting started with GitHub
 
-### Create a github account
+### Create a GitHub account
 
-**What is "github"?**
+**What is "GitHub"?**
 
 GitHub is a web-based platform built around Git, a distributed version control system.
 It provides hosting for software development projects using Git repositories and offers a wide
 range of features aimed towards collaboration, code review, and project management.
 
-Go to [github](https://github.com) and sign up to create a new account if you don't already have one.
+Go to [GitHub](https://github.com) and sign up to create a new account if you don't already have one.
 
 ### How to install git
 
-**What is "git?"**
+**What is "Git?"**
 
 Git is a version control system made to track changes during development of a software based project.
-It is used by developers to manage collaboration, different versions of files and much more
+It is used by developers to manage collaboration, different versions of files and much more.
 
 **Linux**
 
-Use your respective package managers to install git, for example on debian based systems
-`$sudo apt install git-all`
+Use your respective package managers to install git, for example on Debian based systems
+`sudo apt install git-all`
 
 **Windows**
 
-1. Download the installer -> [exe link](https://git-scm.com/download/win)
-2. Follow the installation wizard (gui)
+1. Download the installer -> [.exe link](https://git-scm.com/download/win)
+2. Follow the installation wizard (GUI)
 3. Set your username and email
    - username: `git config --global user.username <username>`
    - email: `git config --global user.email <email>`
 
 _NOTE: Do not change any preset installation setting in the wizard (unless you know what you are doing)_
 
-[reference link](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+[Reference Link](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 
-### How to setup remote access on github
+### How to setup remote access on GitHub
 
-There are two ways of setting up remote access privilege on github HTTP and SSH, but in this session we will be focusing on only one of them, ie, HTTP
+There are two ways of setting up remote access privilege on GitHub HTTP and SSH, but in this session we will be focusing on only one of them, i.e., HTTP
 
 **HTTPS**
 
-1. Create a public access key
-2. If you are on linux, heres how you use credentials for github `git config --global credential.helper 'cache --timeout=31536000'`
-3. If you are on windows, use `git config --global credential.helper manager` and then you should get pop ups for credentials
-4. Go to settings page (click on user icon on top right then settings)
+1. Create a Public Access Key
+2. If you are on Linux, heres how you use credentials for GitHub `git config --global credential.helper 'cache --timeout=31536000'`
+3. If you are on Windows, use `git config --global credential.helper manager` and then you should get pop ups for credentials
+4. Go to the Settings page (click on user icon on top right then settings)
 5. Scroll down till you see developer settings and click on it
-6. Go to personal access tokens, then tokens classic
+6. Go to Personal Access Tokens, then tokens classic
 7. Generate a new token, then click classic
 8. Give it necessary permissions
 9. Copy access token
@@ -99,32 +99,32 @@ _NOTE: The access token is only visible once and when the tab is closed its not 
 
 For this example we will be creating your own personalized `README.md` file which gets displayed whenever someone views your page.
 
-### How to make a github repository
+### How to make a GitHub repository
 
 **What is a "repository"?**
 
-So has everyone use google drive to store things before? Good, a repository is like google drive but for code.
+So has everyone use google drive to store things before? Good, a repository is like Google Drive but for code.
 It is a cloud storage space where typically software projects are stored and managed for hosting and collaboration purposes.
 Basically it is one big folder filled with code files necessary to make a project work out of the box, so that it becomes easy to share projects with others.
 
 **Steps to create one**
 
 1. Go to your repositories tab -> `https://github.com/<username>?tab=repositories` and click on `New`
-2. Name your repository your username, ie for example my repository is called `Aditya-Jyoti` which is my `<username>`
+2. Name your repository your username, i.e. for example my repository is called `Aditya-Jyoti` which is my `<username>`
 3. Give it a description (optional)
-4. Make it public
+4. Make it Public
 5. Click on `Add a README file`
 6. Select a license (pick MIT)
-7. Click on `Create repository`
+7. Click on `Create Repository`
 
 ### Begin working on the repository
 
-1. Clone the repository `$git clone https://<username>//<username>.git`
+1. Clone the repository `git clone https://<username>//<username>.git`
 2. Open the repository and the README.md in your favorite text editor
-3. Make changes, example add a description of yourself
-4. Add the file to staging `$git add README.md`
-5. Add a descriptive commit message `$git commit -m "Update readme"`
-6. Push the repository to github `$git push`
+3. Make changes, for example, add a description of yourself
+4. Add the file to staging `git add README.md`
+5. Add a descriptive commit message `git commit -m "Update readme"`
+6. Push the repository to github `git push`
 
 ```bash
 git remote add origin <url>
@@ -140,7 +140,7 @@ Head on over to your first open source project called [Introduce Yourself](https
 
 ## Merge and Rebase
 
-Pray to god that you don't have to come to this, but now that you have here's what merge hell is
+Pray to god that you don't have to come to this, but now that you have here's what merge hell is.
 
 ### Git Merge
 
@@ -168,7 +168,7 @@ git fetch
 ```
 
 The main difference between `git pull` and `git fetch` is that git pull auto merges for you,
-hence why it may and may not work during merging.
+hence it may and may not work during merging.
 
 3. Now merge the branch onto your current branch
 
@@ -249,8 +249,8 @@ There are times when you have already written down some code so cloning a repo t
 Here's how you initialize a git repo locally and then add it globally to github.
 
 1. Go to any folder which you want to make a git repo of
-2. Type in `git init .` this should make the current folder a git repo (adds a .git file)
-3. Now go to github and create a black repo
+2. Type in `git init .` this should make the current folder a git repo (adds a .git folder)
+3. Now go to GitHub and create a blank repo
 4. Copy its clone link (http/ssh)
 5. Come over to where you initialized a new repo and add a new remote
 
@@ -295,12 +295,12 @@ You could even open up an `issue` in this repository and I will reply back when 
 
 So we learnt
 
-1. What is git
-2. What is github
+1. What is Git?
+2. What is GitHub?
 
 Then we learnt how to
 
-1. Create a github repository
+1. Create a GitHub repository
 2. Clone, Add, Commit and Push changes to that repository
 3. Contribute to open source projects
 
