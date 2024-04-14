@@ -110,7 +110,7 @@ Basically it is one big folder filled with code files necessary to make a projec
 **Steps to create one**
 
 1. Go to your repositories tab -> `https://github.com/<username>?tab=repositories` and click on `New`
-2. Name your repository your username, ie for example my repository is called `Aditya-Jyoti` which is my `<username>`
+2. Name your repository your username, i.e. for example my repository is called `Aditya-Jyoti` which is my `<username>`
 3. Give it a description (optional)
 4. Make it public
 5. Click on `Add a README file`
@@ -119,12 +119,12 @@ Basically it is one big folder filled with code files necessary to make a projec
 
 ### Begin working on the repository
 
-1. Clone the repository `$git clone https://<username>//<username>.git`
+1. Clone the repository `git clone https://<username>//<repository-name>.git`
 2. Open the repository and the README.md in your favorite text editor
 3. Make changes, example add a description of yourself
-4. Add the file to staging `$git add README.md`
-5. Add a descriptive commit message `$git commit -m "Update readme"`
-6. Push the repository to github `$git push`
+4. Add the file to staging `git add README.md`
+5. Add a descriptive commit message `git commit -m "Update readme"`
+6. Push the repository to github `git push`
 
 ```bash
 git remote add origin <url>
@@ -249,8 +249,8 @@ There are times when you have already written down some code so cloning a repo t
 Here's how you initialize a git repo locally and then add it globally to github.
 
 1. Go to any folder which you want to make a git repo of
-2. Type in `git init .` this should make the current folder a git repo (adds a .git file)
-3. Now go to github and create a black repo
+2. Type in `git init .` this should make the current folder a git repo (adds a .git folder)
+3. Now go to GitHub and create a blank repo
 4. Copy its clone link (http/ssh)
 5. Come over to where you initialized a new repo and add a new remote
 
